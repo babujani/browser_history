@@ -7,6 +7,7 @@ const HistoryElement = props => {
   const deleteAHistory = () => {
     deleteHistory(id)
   }
+
   return (
     <li className="history-item-container">
       <p className="time">{timeAccessed}</p>
@@ -21,7 +22,12 @@ const HistoryElement = props => {
           </div>
         </div>
 
-        <button className="button" type="button" onClick={deleteAHistory}>
+        <button
+          testid="delete"
+          className="button"
+          type="button"
+          onClick={deleteAHistory}
+        >
           <img
             src="https://assets.ccbp.in/frontend/react-js/delete-img.png"
             alt="delete"

@@ -1,6 +1,7 @@
 import BrowserHistory from './components/browserHistory'
 import './App.css'
 
+/*
 const initialHistoryList = [
   {
     id: 0,
@@ -75,6 +76,7 @@ const initialHistoryList = [
     domainUrl: 'google.com',
   },
 ]
-const App = () => <BrowserHistory initialHistoryList={initialHistoryList} />
+*/
+const App = () => <BrowserHistory />
 
 export default App
