@@ -1,6 +1,5 @@
 import './emptyPage.css'
 
-const EmptyPage = () => {
-  return <p>There is no history to show</p>
-}
+const EmptyPage = () => <p>There is no history to show</p>
+
 export default EmptyPage

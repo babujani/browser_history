@@ -1,6 +1,7 @@
 import {Component} from 'react'
 import HistoryElement from './historyElement'
 import './browserHistory.css'
+import EmptyPage from './emptyPage'
 
 const initialHistoryList = [
   {
@@ -102,6 +103,10 @@ class BrowserHistory extends Component {
         historyItem.title.toLowerCase().includes(searchInput.toLowerCase()) ||
         historyItem.domainUrl.toLowerCase().includes(searchInput.toLowerCase()),
     )
+
+    if (searchItemsList.length === 0) {
+      return <EmptyPage />
+    }
 
     return (
       <div>
