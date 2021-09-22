@@ -103,9 +103,11 @@ class BrowserHistory extends Component {
         historyItem.title.toLowerCase().includes(searchInput.toLowerCase()) ||
         historyItem.domainUrl.toLowerCase().includes(searchInput.toLowerCase()),
     )
-
+    let historyPage
     if (searchItemsList.length === 0) {
-      return <EmptyPage />
+      historyPage = true
+    } else {
+      historyPage = false
     }
 
     return (
@@ -132,7 +134,29 @@ class BrowserHistory extends Component {
             />
           </div>
         </div>
-        <div className="main-section">
+        {historyPage ? (
+          <EmptyPage />
+        ) : (
+          <div className="main-section">
+            <ul className="items-container">
+              {searchItemsList.map(historyItems => (
+                <HistoryElement
+                  key={historyItems.id}
+                  historyItem={historyItems}
+                  deleteHistory={this.deleteHistoryItem}
+                />
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    )
+  }
+}
+export default BrowserHistory
+
+/*
+<div className="main-section">
           <ul className="items-container">
             {searchItemsList.map(historyItems => (
               <HistoryElement
@@ -143,8 +167,5 @@ class BrowserHistory extends Component {
             ))}
           </ul>
         </div>
-      </div>
-    )
-  }
-}
-export default BrowserHistory
+
+*/
